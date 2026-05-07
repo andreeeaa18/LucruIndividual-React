@@ -4,10 +4,9 @@ import "./Toast.css";
 let show = null;
 
 export function useToast() {
-  const show = (msg) => {
+  return (msg) => {
     if (show) show(msg);
   };
-  return show;
 }
 
 export function Toast() {

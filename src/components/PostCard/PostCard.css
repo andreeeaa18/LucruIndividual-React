@@ -104,15 +104,42 @@
   opacity: 0.75;
 }
 
+.card-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .trash-btn {
   background: none;
   border: none;
   box-shadow: none;
   padding: 2px 4px;
   cursor: pointer;
-  margin-left: auto;
   display: flex;
   align-items: center;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 2px 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+
+.edit-btn:hover {
+  color: var(--ink);
+}
+
+.edit-btn svg {
+  width: 15px;
+  height: 15px;
 }
 
 .trash-btn img {

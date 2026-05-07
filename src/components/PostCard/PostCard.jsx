@@ -51,11 +51,39 @@ function PostWrite({ onDelete }) {
   );
 }
 
+function PostEdit({ onEdit }) {
+  return (
+    <button
+      className="edit-btn"
+      title="Edit"
+      onClick={(e) => {
+        e.stopPropagation();
+        onEdit();
+      }}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+        <path d="m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+      </svg>
+    </button>
+  );
+}
+
 export default function PostCard({
   post: initialPost,
   onClick,
   onDelete,
   showDelete,
+  onEdit,
+  showEdit,
 }) {
   const [post, setPost] = useState(initialPost);
 
@@ -90,7 +118,12 @@ export default function PostCard({
       <div className="card-footer">
         <PostRead post={post} onLike={handleLike} />
         <CommentPost count={post.commentCount} />
-        {showDelete && <PostWrite onDelete={() => onDelete(post)} />}
+        {(showEdit || showDelete) && (
+          <div className="card-actions">
+            {showEdit && <PostEdit onEdit={() => onEdit(post)} />}
+            {showDelete && <PostWrite onDelete={() => onDelete(post)} />}
+          </div>
+        )}
       </div>
     </div>
   );

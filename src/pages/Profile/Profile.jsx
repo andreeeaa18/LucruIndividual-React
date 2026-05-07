@@ -41,6 +41,12 @@ export default function Profile() {
 
   const [selectedPost, setSelectedPost] = useState(null);
   const [showCreate, setShowCreate] = useState(false);
+  const [editPost, setEditPost] = useState(null);
+
+  const handleEdit = async (post) => {
+    const full = await postsApi.get(post.id).catch(() => post);
+    setEditPost(full);
+  };
 
   const handleCardClick = async (post) => {
     const full = await postsApi.get(post.id).catch(() => post);
@@ -84,6 +90,8 @@ export default function Profile() {
                 onClick={handleCardClick}
                 showDelete
                 onDelete={handleDelete}
+                showEdit
+                onEdit={handleEdit}
               />
             ))}
           </div>
@@ -95,6 +103,18 @@ export default function Profile() {
           post={selectedPost}
           onClose={() => setSelectedPost(null)}
           onUpdated={loadMyPosts}
+        />
+      )}
+
+      {editPost && (
+        <WritePost
+          post={editPost}
+          onClose={() => setEditPost(null)}
+          onSaved={(updated) => {
+            setEditPost(null);
+            showToast("Story updated!");
+            loadMyPosts();
+          }}
         />
       )}
 
