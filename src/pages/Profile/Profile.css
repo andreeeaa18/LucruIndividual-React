@@ -1,0 +1,53 @@
+.user-banner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  background-color: var(--nav-bg);
+}
+
+.user-banner-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+.user-banner-inner h2 {
+  color: white;
+  margin-left: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Fredoka One", cursive;
+}
+
+.user-banner-inner h2 img {
+  width: 28px;
+  height: 28px;
+}
+
+.user-banner-inner p {
+  color: white;
+  margin-top: 5px;
+  margin-left: 9px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.profile-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .profile-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}

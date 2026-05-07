@@ -1,0 +1,86 @@
+.typing-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.typing-stats {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.typing-timer {
+  font-weight: 700;
+}
+
+.typing-timer-warning {
+  color: #e67e22;
+  animation: pulse 0.8s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.typing-text-box {
+  background: #fff;
+  border: 2px solid var(--border);
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 0 var(--border);
+  min-height: 80px;
+  width: 130%;
+}
+
+.char-correct {
+  color: #4caf50;
+}
+.char-wrong {
+  color: var(--accent);
+  background: #ffe0e0;
+}
+.char-pending {
+  color: #999;
+}
+
+.typing-input {
+  width: 130%;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  border: 2px solid var(--border);
+  border-radius: 0;
+  outline: none;
+}
+
+.game-result {
+  text-align: center;
+  padding: 2rem;
+  border: 3px solid var(--border);
+  box-shadow: 6px 6px 0 var(--border);
+  background: #fff;
+  margin-top: 1rem;
+}
+
+.game-result h2 {
+  font-family: "Fredoka One", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-win h2 {
+  color: #4caf50;
+}
+.game-lose h2 {
+  color: var(--accent);
+}

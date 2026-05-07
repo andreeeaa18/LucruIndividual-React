@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #fdf6e3;
+  --ink: #2d2d2d;
+  --accent: #e84a4a;
+  --accent2: #4a90e2;
+  --muted: #888;
+  --border: #2d2d2d;
+  --card-bg: #fff;
+  --nav-bg: #2d2d2d;
+  --btn-yellow: #f5c842;
+  --btn-green: #4caf50;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  font-family: "Nunito", sans-serif;
+  border: 2px solid var(--border);
+  box-shadow: 3px 3px 0 var(--border);
+  background: var(--btn-yellow);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--border);
+}
+.btn-red {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-blue {
+  background: var(--accent2);
+  color: #fff;
+}
+.btn-green {
+  background: var(--btn-green);
+  color: #fff;
+}
+.btn-gray {
+  background: #ccc;
+  color: var(--ink);
+}
+.btn-sm {
+  padding: 3px 8px;
+  font-size: 0.8rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent2);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.page-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.page-header h1 {
+  font-family: "Fredoka One", cursive;
+  font-size: 2rem;
+}
+
+.empty-state {
+  color: var(--muted);
+}
+.empty-state .emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.spinner {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  color: var(--muted);
+}

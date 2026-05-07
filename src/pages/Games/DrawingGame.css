@@ -1,0 +1,106 @@
+.drawing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.drawing-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(20, 24px);
+  border: 2px solid #ccc;
+  cursor: crosshair;
+  user-select: none;
+  margin-top: 20px;
+}
+
+.grid-cell {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.gallery-thumbnail {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-auto-rows: 1fr;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.gallery-thumbnail .grid-cell {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 15px;
+  gap: 10px;
+  width: 150px;
+}
+
+.gallery-item > div:last-child {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.gallery-item button {
+  margin: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.gallery h2 {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.obj-color {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 5px;
+}
